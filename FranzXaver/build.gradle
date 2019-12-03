@@ -1,16 +1,7 @@
-plugins {
-    id 'org.openjfx.javafxplugin' version '0.0.8'
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
 version = project.properties['application.version']
-
-javafx {
-    version = '11'
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
-}
 
 sourceSets {
     test {
