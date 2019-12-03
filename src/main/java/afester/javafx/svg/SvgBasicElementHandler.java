@@ -57,9 +57,9 @@ import org.apache.batik.anim.dom.SVGOMTextElement;
 import org.apache.batik.css.dom.CSSOMSVGColor;
 import org.apache.batik.css.dom.CSSOMValue;
 import org.apache.batik.dom.svg.SVGPathSegItem;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.css.CSSPrimitiveValue;
 import org.w3c.dom.css.CSSStyleDeclaration;
 import org.w3c.dom.svg.SVGRect;
@@ -71,7 +71,8 @@ import java.util.List;
 
 
 public class SvgBasicElementHandler {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LoggerFactory.getLogger(SvgBasicElementHandler.class);
+
 
     public SvgStyleTools styleTools = null;
     private SvgLoader loader = null;
@@ -459,7 +460,7 @@ public class SvgBasicElementHandler {
             }
 
             if (fxObj != null) {
-                logger.debug(element);
+                logger.debug(element.toString());
                 styleTools.applyStyle(fxObj, element);
 
                 result.getChildren().add(fxObj);

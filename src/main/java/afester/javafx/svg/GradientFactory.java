@@ -26,8 +26,8 @@ import org.apache.batik.anim.dom.SVGOMAnimatedTransformList;
 import org.apache.batik.anim.dom.SVGOMGradientElement;
 import org.apache.batik.anim.dom.SVGOMLinearGradientElement;
 import org.apache.batik.anim.dom.SVGOMRadialGradientElement;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 import org.w3c.dom.svg.SVGMatrix;
 import org.w3c.dom.svg.SVGTransform;
@@ -37,7 +37,8 @@ import java.util.List;
 
 
 public class GradientFactory {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LoggerFactory.getLogger(GradientFactory.class);
+
 
     private GradientPolicy gradientTransformPolicy = GradientPolicy.USE_SUPPORTED;
 
@@ -119,7 +120,7 @@ by just transforming start and end coordinates of the gradient.
                       logger.warn(
                               "GradientTransform includes scale or skew - "
                             + "this is not yet supported! Rendering might be inaccurate.");
-                      logger.debug(to1);
+                      logger.debug(to1.toString());
                   }
                   final double newX1 = matrix.getA() * startX + matrix.getB() * startY 
                                        + matrix.getC();
@@ -142,7 +143,7 @@ by just transforming start and end coordinates of the gradient.
                       logger.warn("GradientTransform includes scale or skew - "
                                 + "using rotation and translation part only! "
                                 + "Rendering might be inaccurate.");
-                      logger.debug(to1);
+                      logger.debug(to1.toString());
 
                       Point2D trans = to1.getTranslation();
                       double rot = to1.getRotation();

@@ -29,8 +29,8 @@ import org.apache.batik.css.dom.CSSOMComputedStyle;
 import org.apache.batik.css.dom.CSSOMComputedStyle.ComputedCSSValue;
 import org.apache.batik.css.dom.CSSOMSVGComputedStyle;
 import org.apache.batik.css.dom.CSSOMSVGComputedStyle.ComputedCSSPaintValue;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.css.CSSPrimitiveValue;
 import org.w3c.dom.css.CSSStyleDeclaration;
 import org.w3c.dom.css.CSSValue;
@@ -44,7 +44,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SvgStyleTools {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LoggerFactory.getLogger(SvgStyleTools.class);
+
 
     protected SVGOMSVGElement svgElement = null;
     private Map<String, Paint> paints = new HashMap<>();
