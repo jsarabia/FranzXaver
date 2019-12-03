@@ -4,14 +4,6 @@ apply plugin: 'maven'
 group 'com.github.jsarabia'
 version '0.1'
 
-sourceSets {
-    test {
-       resources {
-            srcDir 'src/test/java'
-       }
-    }
-}
-
 repositories {
     mavenCentral()
 }
