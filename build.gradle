@@ -1,6 +1,7 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 
-group 'com.github.afester.javafx'
+group 'com.github.jsarabia.FranzXaverSVG'
 version '0.1'
 
 sourceSets {
