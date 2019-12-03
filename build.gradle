@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'eclipse'
 
 group 'com.github.afester.javafx'
 version '0.1'
