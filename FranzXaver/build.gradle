@@ -1,7 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-version = project.properties['application.version']
+group 'com.github.afester.javafx'
+version '0.1'
 
 sourceSets {
     test {
