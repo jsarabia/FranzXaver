@@ -1,7 +1,16 @@
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
 version = project.properties['application.version']
+
+javafx {
+    version = '11'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
 
 sourceSets {
     test {
@@ -16,14 +25,14 @@ repositories {
 }
 
 dependencies {
-    compile 'org.apache.xmlgraphics:batik-dom:1.9'
-    compile 'org.apache.xmlgraphics:batik-anim:1.9'
-    compile 'org.apache.xmlgraphics:batik-bridge:1.9'
-    compile 'xalan:xalan:2.7.2'
-    compile 'org.apache.logging.log4j:log4j-api:2.5'
+    implementation 'org.apache.xmlgraphics:batik-dom:1.9'
+    implementation 'org.apache.xmlgraphics:batik-anim:1.9'
+    implementation 'org.apache.xmlgraphics:batik-bridge:1.9'
+    implementation 'xalan:xalan:2.7.2'
+    implementation 'org.apache.logging.log4j:log4j-core:2.12.1'
 
     runtime 'org.apache.xmlgraphics:xmlgraphics-commons:2.1'
-    runtime 'org.apache.logging.log4j:log4j-core:2.5'
+    runtime 'org.apache.logging.log4j:log4j-core:2.12.1'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }

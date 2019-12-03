@@ -35,8 +35,6 @@ import javafx.scene.text.Text;
 
 import org.junit.Test;
 
-
-
 public class BasicTests {
 
     @Test
@@ -44,7 +42,7 @@ public class BasicTests {
         // Note: Inkscape cannot create svg:line objects, a line is created as path in any case.
         // The redline.svg file has been created manually.
         SvgLoader loader = new SvgLoader();
-        Group svgImage = loader.loadSvg("data/redline.svg");
+        Group svgImage = loader.loadSvg(ClassLoader.getSystemResourceAsStream("afester/javafx/data/redline.svg"));
         assertEquals(1, svgImage.getChildrenUnmodifiable().size());
 
         Node node = svgImage.getChildrenUnmodifiable().get(0);
@@ -63,7 +61,7 @@ public class BasicTests {
     @Test
     public void testBlueRectangle() {
         SvgLoader loader = new SvgLoader();
-        Group svgImage = loader.loadSvg("data/bluerect.svg");
+        Group svgImage = loader.loadSvg(ClassLoader.getSystemResourceAsStream("afester/javafx/data/bluerect.svg"));
         assertEquals(1, svgImage.getChildrenUnmodifiable().size());
 
         Node node = svgImage.getChildrenUnmodifiable().get(0);
@@ -90,7 +88,7 @@ public class BasicTests {
     @Test
     public void testCircle() {
         SvgLoader loader = new SvgLoader();
-        Group svgImage = loader.loadSvg("data/circle.svg");
+        Group svgImage = loader.loadSvg(ClassLoader.getSystemResourceAsStream("afester/javafx/data/circle.svg"));
         assertEquals(1, svgImage.getChildrenUnmodifiable().size());
         
         Node node = svgImage.getChildrenUnmodifiable().get(0);
@@ -114,7 +112,7 @@ public class BasicTests {
     @Test
     public void testEllipse() {
         SvgLoader loader = new SvgLoader();
-        Group svgImage = loader.loadSvg("data/ellipse.svg");
+        Group svgImage = loader.loadSvg(ClassLoader.getSystemResourceAsStream("afester/javafx/data/ellipse.svg"));
         assertEquals(1, svgImage.getChildrenUnmodifiable().size());
         
         Node node = svgImage.getChildrenUnmodifiable().get(0);
@@ -139,7 +137,7 @@ public class BasicTests {
     @Test
     public void testText() {
         SvgLoader loader = new SvgLoader();
-        Group svgImage = loader.loadSvg("data/simpletext.svg");
+        Group svgImage = loader.loadSvg(ClassLoader.getSystemResourceAsStream("afester/javafx/data/simpletext.svg"));
         assertEquals(1, svgImage.getChildrenUnmodifiable().size());
         
         Node node = svgImage.getChildrenUnmodifiable().get(0);
